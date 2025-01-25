@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="/Assets/styles.css">
+</head>
+
+<body>
+    <h1>Carrito de Compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Descuento (%)</th>
+                <th>Precio Final</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="carritoBody"></tbody>
+
+    </table>
+    <div>Total General: $<span id="totalVenta">0.00</span></div>
+
+    <h2>Agregar nuevo producto</h2>
+    <form id="añadirProducto">
+        <label>Nombre: <input type="text" id="nuevoNombre" required /></label>
+        <label>Precio: <input type="number" id="nuevoPrecio" step="0.01" min="0" required /></label>
+        <label>Cantidad: <input type="number" id="nuevaCantidad" min="1" required /></label>
+        <label>Descuento (%): <input type="number" id="nuevoDescuento" min="0" max="100" required /></label>
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <div class="ordenar">
+        <button onclick="ordenarPorNombre()">Ordenar por Nombre</button>
+        <button onclick="ordenarPorPrecio()">Ordenar por Precio (Menor a Mayor)</button>
+        <button onclick="ordenarPorPrecio(true)">Ordenar por Precio (Mayor a Menor)</button>
+        <button onclick="ordenarPorCantidad()">Ordenar por Cantidad (Menor a Mayor)</button>
+        <button onclick="ordenarPorCantidad(true)">Ordenar por Cantidad (Mayor a Menor)</button>
+        <button onclick="ordenarPorDescuento()">Ordenar por Descuento (Menor a Mayor)</button>
+        <button onclick="ordenarPorDescuento(true)">Ordenar por Descuento (Mayor a Menor)</button>
+        <button onclick="ordenarPorPrecioFinal()">Ordenar por Precio Final (Menor a Mayor)</button>
+        <button onclick="ordenarPorPrecioFinal(true)">Ordenar por Precio Final (Mayor a Menor)</button>
+    </div>
+    
+
+    <script src="JS/carrito.js" defer></script>
+</body>
+
+</html>
